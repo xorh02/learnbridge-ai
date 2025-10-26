@@ -1,0 +1,1052 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LearnBridge AI - Homework Help for Everyone</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="styles.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="modern-header">
+        <div class="nav-container">
+            <!-- Logo Section -->
+            <div class="brand-section">
+                <div class="logo-wrapper">
+                    <div class="logo-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                        <span class="logo-sparkle">✨</span>
+                    </div>
+                    <div class="brand-text">
+                        <h1 class="brand-name">LearnBridge</h1>
+                        <span class="brand-tagline">AI Education Platform</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Navigation Pills -->
+            <nav class="nav-section">
+                <div class="nav-pills-container">
+                    <button class="nav-pill active" onclick="showLayer('student')" data-layer="student" style="border-radius: 9999px !important; height: 48px !important;">
+                        <span class="pill-text">Student Help</span>
+                    </button>
+                    
+                    <button class="nav-pill" onclick="showLayer('volunteer')" data-layer="volunteer" style="border-radius: 9999px !important; height: 48px !important;">
+                        <span class="pill-text">Volunteer</span>
+                    </button>
+                    
+                    <button class="nav-pill" onclick="showLayer('parent')" data-layer="parent" style="border-radius: 9999px !important; height: 48px !important;">
+                        <span class="pill-text">Parent Portal</span>
+                    </button>
+                    
+                    <button class="nav-pill" onclick="showLayer('teacher')" data-layer="teacher" style="border-radius: 9999px !important; height: 48px !important;">
+                        <span class="pill-text">Teacher Analytics</span>
+                    </button>
+                </div>
+            </nav>
+            
+            <!-- Mobile Menu Toggle -->
+            <div class="mobile-menu-toggle" onclick="toggleMobileMenu()">
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+            </div>
+        </div>
+        
+        <!-- Mobile Navigation -->
+        <div class="mobile-nav" id="mobile-nav">
+            <div class="mobile-nav-content">
+                <button class="mobile-nav-item active" onclick="showLayer('student'); closeMobileMenu()">
+                    <span class="mobile-text">Student Help</span>
+                </button>
+                <button class="mobile-nav-item" onclick="showLayer('volunteer'); closeMobileMenu()">
+                    <span class="mobile-text">Volunteer</span>
+                </button>
+                <button class="mobile-nav-item" onclick="showLayer('parent'); closeMobileMenu()">
+                    <span class="mobile-text">Parent Portal</span>
+                </button>
+                <button class="mobile-nav-item" onclick="showLayer('teacher'); closeMobileMenu()">
+                    <span class="mobile-text">Teacher Analytics</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h2>AI Homework Help + Human Support</h2>
+            <p>Instant solutions, local mentors, family engagement - all in one platform</p>
+            <div class="impact-stats">
+                <div class="stat">
+                    <span class="stat-icon">🚨</span>
+                    <span class="stat-number">247</span>
+                    <span class="stat-label">Students Helped</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-icon">🤝</span>
+                    <span class="stat-number">89</span>
+                    <span class="stat-label">Local Volunteers</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-icon">📚</span>
+                    <span class="stat-number">12</span>
+                    <span class="stat-label">School Districts</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Layer 1: AI Tutor (Student Interface) -->
+    <section id="student-layer" class="layer active">
+        <div class="container">
+            <h3><i class="fas fa-robot"></i> AI Homework Helper</h3>
+            <!-- How to Use Section -->
+            <div class="how-to-use-section">
+                <h3><i class="fas fa-lightbulb"></i> Three Ways to Get Help</h3>
+                <div class="methods-grid">
+                    <div class="method-card">
+                        <div class="method-icon">
+                            <i class="fas fa-comments"></i>
+                        </div>
+                        <h4>💬 Type Your Question</h4>
+                        <p>Simply type your homework question in the chat box below. Perfect for math problems, essay questions, or any text-based help.</p>
+                        <div class="method-example">
+                            <span>"What's the quadratic formula?"</span>
+                        </div>
+                    </div>
+
+                    <div class="method-card">
+                        <div class="method-icon">
+                            <i class="fas fa-microphone"></i>
+                        </div>
+                        <h4>🎤 Speak Your Question</h4>
+                        <p>Click the microphone button and speak naturally. Works in 15+ languages including Spanish, Chinese, and Arabic.</p>
+                        <div class="method-example">
+                            <span>"¿Cómo resuelvo esta ecuación?"</span>
+                        </div>
+                    </div>
+
+                    <div class="method-card">
+                        <div class="method-icon">
+                            <i class="fas fa-upload"></i>
+                        </div>
+                        <h4>� Upload Files & Photos</h4>
+                        <p>Upload photos, PDFs, Word docs, or text files. Our AI can read handwriting, printed text, and document content.</p>
+                        <div class="method-example">
+                            <span>📄 Photos, PDFs, Word docs, worksheets</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Human Tutor Matching Section -->
+            <div class="volunteer-matching-section" id="volunteer-section">
+                <div class="volunteer-header">
+                    <h3><i class="fas fa-users"></i> Need Human Help? Get Matched with a Volunteer Tutor!</h3>
+                    <p>Answer a few quick questions and our AI will find the perfect volunteer tutor for you.</p>
+                </div>
+                
+                <div class="volunteer-toggle">
+                    <button id="show-volunteer-form" class="volunteer-btn primary">
+                        <i class="fas fa-user-graduate"></i> Find My Perfect Tutor
+                    </button>
+                </div>
+
+                <!-- Volunteer Matching Form -->
+                <div class="volunteer-form-container" id="volunteer-form" style="display: none;">
+                    <form id="volunteer-questionnaire">
+                        <div class="question-group">
+                            <label><i class="fas fa-book"></i> What subject do you need help with?</label>
+                            <select name="subject" required>
+                                <option value="">Select a subject...</option>
+                                <option value="math">Mathematics</option>
+                                <option value="science">Science</option>
+                                <option value="english">English/Language Arts</option>
+                                <option value="history">History/Social Studies</option>
+                                <option value="foreign-language">Foreign Languages</option>
+                                <option value="computer-science">Computer Science</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+
+                        <div class="question-group">
+                            <label><i class="fas fa-graduation-cap"></i> What's your grade level?</label>
+                            <select name="grade" required>
+                                <option value="">Select grade...</option>
+                                <option value="elementary">Elementary (K-5)</option>
+                                <option value="middle">Middle School (6-8)</option>
+                                <option value="high">High School (9-12)</option>
+                                <option value="college">College/University</option>
+                            </select>
+                        </div>
+
+                        <div class="question-group">
+                            <label><i class="fas fa-brain"></i> How do you learn best?</label>
+                            <select name="learning-style" required>
+                                <option value="">Select learning style...</option>
+                                <option value="visual">Visual (diagrams, charts, images)</option>
+                                <option value="auditory">Auditory (explanations, discussions)</option>
+                                <option value="kinesthetic">Hands-on (practice problems, activities)</option>
+                                <option value="reading">Reading/Writing (text, notes)</option>
+                                <option value="mixed">Mix of all styles</option>
+                            </select>
+                        </div>
+
+                        <div class="question-group">
+                            <label><i class="fas fa-clock"></i> When do you usually study?</label>
+                            <select name="availability" required>
+                                <option value="">Select time preference...</option>
+                                <option value="morning">Morning (6AM-12PM)</option>
+                                <option value="afternoon">Afternoon (12PM-6PM)</option>
+                                <option value="evening">Evening (6PM-10PM)</option>
+                                <option value="flexible">I'm flexible</option>
+                            </select>
+                        </div>
+
+                        <div class="question-group">
+                            <label><i class="fas fa-language"></i> What language would you prefer?</label>
+                            <select name="language" required>
+                                <option value="">Select language...</option>
+                                <option value="english">English</option>
+                                <option value="spanish">Spanish</option>
+                                <option value="french">French</option>
+                                <option value="mandarin">Mandarin Chinese</option>
+                                <option value="hindi">Hindi</option>
+                                <option value="arabic">Arabic</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+
+                        <div class="question-group">
+                            <label><i class="fas fa-question-circle"></i> Describe what you're struggling with:</label>
+                            <textarea name="description" rows="3" placeholder="Tell us about your specific challenge or what kind of help you need..." required></textarea>
+                        </div>
+
+                        <button type="submit" class="volunteer-btn primary">
+                            <i class="fas fa-search"></i> Find My Perfect Match!
+                        </button>
+                    </form>
+                </div>
+
+                <!-- Matching Results -->
+                <div class="volunteer-results" id="volunteer-results" style="display: none;">
+                    <h4><i class="fas fa-star"></i> We Found Your Perfect Matches!</h4>
+                    <div id="volunteer-matches"></div>
+                </div>
+            </div>
+
+            <!-- Unified AI Chatbot -->
+            <div class="unified-chat-container">
+                <div class="chat-header">
+                    <div class="chat-title">
+                        <i class="fas fa-robot"></i>
+                        <h4>AI Homework Assistant</h4>
+                    </div>
+                    <div class="chat-subtitle">
+                        Choose your preferred method above, then start getting help below!
+                    </div>
+                </div>
+
+                <!-- Chat Messages Area -->
+                <div class="chat-messages" id="chat-messages">
+                    <div class="ai-message">
+                        <div class="message-avatar">🤖</div>
+                        <div class="message-content">
+                            Hi! I'm your AI tutor. You can:
+                            <ul>
+                                <li>💬 Type your questions</li>
+                                <li>🎤 Speak to me (click the mic)</li>
+                                <li>📸 Upload homework photos</li>
+                            </ul>
+                            What do you need help with today?
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Unified Input Area -->
+                <div class="unified-input-container">
+                    <!-- Text Input with Multi-Function Buttons -->
+                    <div class="input-row">
+                        <input type="text" id="chat-input" placeholder="Type your homework question in any language..." />
+                        <button id="file-btn" title="Upload File/Photo">
+                            <i class="fas fa-paperclip"></i>
+                        </button>
+                        <button id="photo-btn" title="Take/Upload Photo">
+                            <i class="fas fa-camera"></i>
+                        </button>
+                        <button id="voice-btn" title="Voice Input">
+                            <i class="fas fa-microphone"></i>
+                        </button>
+                        <button id="send-chat-btn" title="Send Message">
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </div>
+
+                    <!-- Auto Language Detection Status -->
+                    <div class="language-status" id="language-status">
+                        <i class="fas fa-language"></i> Ready for any language 🌍
+                    </div>
+
+                    <!-- Hidden File Inputs -->
+                    <input type="file" id="photo-input" accept="image/*" hidden>
+                    <input type="file" id="file-input" accept=".pdf,.doc,.docx,.txt,.jpg,.jpeg,.png,.gif,.webp" hidden>
+                </div>
+
+                <!-- Status Area -->
+                <div class="chat-status" id="chat-status" style="display: none;">
+                    <div class="status-content">
+                        <i class="fas fa-spinner fa-spin"></i>
+                        <span id="status-text">Processing...</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- AI Response Area -->
+            <div class="ai-response" id="ai-response" style="display: none;">
+                <div class="response-header">
+                    <h4><i class="fas fa-brain"></i> AI Tutor Explanation</h4>
+                    <button onclick="playAudioExplanation()"><i class="fas fa-volume-up"></i> Listen</button>
+                </div>
+                <div class="solution-steps" id="solution-steps"></div>
+                
+                <!-- Community Layer Integration -->
+                <div class="community-support">
+                    <h5><i class="fas fa-users"></i> Local Student Mentors</h5>
+                    <div class="volunteer-comments" id="volunteer-comments">
+                        <p class="loading">Connecting you with local volunteers...</p>
+                    </div>
+                    <div class="add-comment">
+                        <textarea placeholder="Need more help? Ask our volunteer mentors..."></textarea>
+                        <button onclick="requestVolunteerHelp()">Ask for More Help</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Layer 2: Community/Volunteer Interface -->
+    <section id="volunteer-layer" class="layer">
+        <div class="container">
+            <!-- Volunteer Header with Profile -->
+            <div class="volunteer-header">
+                <div class="volunteer-profile-section">
+                    <h3><i class="fas fa-hands-helping"></i> Volunteer Dashboard</h3>
+                    <div class="volunteer-profile-card" id="volunteer-profile" style="display: none;">
+                        <div class="profile-info">
+                            <div class="profile-avatar">AJ</div>
+                            <div class="profile-details">
+                                <h4>Alex Johnson</h4>
+                                <p>Lincoln High School • Senior</p>
+                                <div class="profile-badges">
+                                    <span class="badge">Mathematics Tutor</span>
+                                    <span class="badge">Top Helper</span>
+                                </div>
+                            </div>
+                            <div class="profile-stats">
+                                <div class="stat-item">
+                                    <span class="stat-number">47</span>
+                                    <span class="stat-label">Students Helped</span>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="stat-number">156</span>
+                                    <span class="stat-label">Hours Earned</span>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="stat-number">4.9⭐</span>
+                                    <span class="stat-label">Rating</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="profile-actions">
+                            <button onclick="viewVolunteerProfile()">View Full Profile</button>
+                            <button onclick="editAvailability()">Set Availability</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Quick Stats Dashboard -->
+                <div class="volunteer-quick-stats" id="volunteer-quick-stats" style="display: none;">
+                    <div class="quick-stat">
+                        <i class="fas fa-ticket-alt"></i>
+                        <div>
+                            <span class="quick-number">3</span>
+                            <span class="quick-label">Active Tickets</span>
+                        </div>
+                    </div>
+                    <div class="quick-stat">
+                        <i class="fas fa-clock"></i>
+                        <div>
+                            <span class="quick-number">12</span>
+                            <span class="quick-label">Pending</span>
+                        </div>
+                    </div>
+                    <div class="quick-stat">
+                        <i class="fas fa-check-circle"></i>
+                        <div>
+                            <span class="quick-number">8</span>
+                            <span class="quick-label">Completed Today</span>
+                        </div>
+                    </div>
+                    <div class="quick-stat">
+                        <i class="fas fa-fire"></i>
+                        <div>
+                            <span class="quick-number">5</span>
+                            <span class="quick-label">Day Streak</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Volunteer Signup (for new volunteers) -->
+            <div class="volunteer-intro" id="volunteer-intro">
+                <div class="signup-hero">
+                    <h4>Join Our Community of Student Mentors! 🌟</h4>
+                    <p>Help local students succeed while earning volunteer hours for college applications</p>
+                    <div class="signup-benefits">
+                        <div class="benefit">
+                            <i class="fas fa-graduation-cap"></i>
+                            <span>Earn volunteer hours</span>
+                        </div>
+                        <div class="benefit">
+                            <i class="fas fa-users"></i>
+                            <span>Help your community</span>
+                        </div>
+                        <div class="benefit">
+                            <i class="fas fa-certificate"></i>
+                            <span>Get recommendation letters</span>
+                        </div>
+                    </div>
+                    <button class="volunteer-signup" onclick="signupVolunteer()">Join as Volunteer</button>
+                </div>
+            </div>
+            
+            <!-- Ticket Management System -->
+            <div class="ticket-management" id="ticket-management" style="display: none;">
+                <div class="ticket-header">
+                    <h4><i class="fas fa-ticket-alt"></i> My Support Tickets</h4>
+                    <div class="ticket-filters">
+                        <button class="filter-btn active" onclick="filterTickets('all')">All Tickets</button>
+                        <button class="filter-btn" onclick="filterTickets('assigned')">Assigned to Me</button>
+                        <button class="filter-btn" onclick="filterTickets('in-progress')">In Progress</button>
+                        <button class="filter-btn" onclick="filterTickets('completed')">Completed</button>
+                    </div>
+                </div>
+
+                <!-- Ticket List -->
+                <div class="ticket-list" id="ticket-list">
+                    <!-- Tickets will be populated by JavaScript -->
+                </div>
+            </div>
+
+            <!-- Available Help Requests (for ticket assignment) -->
+            <div class="available-requests" id="available-requests" style="display: none;">
+                <h4><i class="fas fa-hand-paper"></i> Available Help Requests</h4>
+                <div class="request-queue">
+                    <div class="queue-filters">
+                        <select id="subject-filter">
+                            <option value="all">All Subjects</option>
+                            <option value="math">Mathematics</option>
+                            <option value="science">Science</option>
+                            <option value="english">English</option>
+                            <option value="history">History</option>
+                        </select>
+                        <select id="difficulty-filter">
+                            <option value="all">All Levels</option>
+                            <option value="elementary">Elementary</option>
+                            <option value="middle">Middle School</option>
+                            <option value="high">High School</option>
+                        </select>
+                    </div>
+                    <div class="help-requests" id="help-requests">
+                        <!-- Will be populated by JavaScript -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Layer 3: Parent Portal -->
+    <section id="parent-layer" class="layer">
+        <div class="container">
+            <h3><i class="fas fa-heart"></i> Parent Dashboard</h3>
+            
+            <!-- Child Selection -->
+            <div class="child-selector" style="margin-bottom: 2rem;">
+                <label for="child-select"><i class="fas fa-child"></i> Select Child:</label>
+                <select id="child-select" onchange="switchChild()" style="padding: 8px 15px; border-radius: 20px; border: 2px solid #667eea; background: white; margin-left: 10px;">
+                    <option value="maria">Maria Rodriguez (Grade 7)</option>
+                    <option value="carlos">Carlos Rodriguez (Grade 5)</option>
+                </select>
+            </div>
+
+            <div class="parent-stats">
+                <!-- Enhanced Progress Card -->
+                <div class="progress-card">
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+                        <h4>This Week's Progress</h4>
+                        <div class="time-filter">
+                            <button onclick="changeTimeframe('week')" class="active">Week</button>
+                            <button onclick="changeTimeframe('month')">Month</button>
+                            <button onclick="changeTimeframe('quarter')">Quarter</button>
+                        </div>
+                    </div>
+                    
+                    <div id="progress-details">
+                        <div class="progress-item">
+                            <span>Math</span>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 85%"></div>
+                            </div>
+                            <span>85%</span>
+                            <small class="trend up">↗ +12%</small>
+                        </div>
+                        <div class="progress-item">
+                            <span>Science</span>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 72%"></div>
+                            </div>
+                            <span>72%</span>
+                            <small class="trend up">↗ +8%</small>
+                        </div>
+                        <div class="progress-item">
+                            <span>English</span>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 91%"></div>
+                            </div>
+                            <span>91%</span>
+                            <small class="trend stable">→ +2%</small>
+                        </div>
+                        <div class="progress-item">
+                            <span>History</span>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 78%"></div>
+                            </div>
+                            <span>78%</span>
+                            <small class="trend up">↗ +15%</small>
+                        </div>
+                    </div>
+                    
+                    <!-- Study Time Insights -->
+                    <div class="study-insights" style="margin-top: 1.5rem; padding-top: 1rem; border-top: 1px solid #eee;">
+                        <div class="insight-row">
+                            <span><i class="fas fa-clock"></i> Total Study Time:</span>
+                            <strong>4h 32m this week</strong>
+                        </div>
+                        <div class="insight-row">
+                            <span><i class="fas fa-brain"></i> AI Interactions:</span>
+                            <strong>23 questions asked</strong>
+                        </div>
+                        <div class="insight-row">
+                            <span><i class="fas fa-users"></i> Volunteer Sessions:</span>
+                            <strong>6 helpful interactions</strong>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Enhanced Achievements -->
+                <div class="milestone-card">
+                    <h4>Recent Achievements</h4>
+                    <div class="milestone">
+                        <i class="fas fa-star gold"></i>
+                        <div>
+                            <span>Mastered fraction multiplication!</span>
+                            <small>Yesterday • Math</small>
+                        </div>
+                        <div class="achievement-badge">🏆</div>
+                    </div>
+                    <div class="milestone">
+                        <i class="fas fa-trophy purple"></i>
+                        <div>
+                            <span>Completed 5 algebra problems independently</span>
+                            <small>3 days ago • Math</small>
+                        </div>
+                        <div class="achievement-badge">🎯</div>
+                    </div>
+                    <div class="milestone">
+                        <i class="fas fa-lightbulb blue"></i>
+                        <div>
+                            <span>Asked thoughtful follow-up questions</span>
+                            <small>5 days ago • Science</small>
+                        </div>
+                        <div class="achievement-badge">💡</div>
+                    </div>
+                    <button onclick="viewAllAchievements()" class="view-all-btn">View All Achievements</button>
+                </div>
+
+                <!-- Enhanced Volunteer Connection -->
+                <div class="volunteer-card">
+                    <h4>Learning Community</h4>
+                    <div class="volunteer-grid">
+                        <div class="helper-info">
+                            <div class="helper-avatar online">JS</div>
+                            <div class="helper-details">
+                                <strong>Jessica S.</strong>
+                                <p>Math Tutor • Senior</p>
+                                <small>3 sessions this week</small>
+                                <div class="rating">⭐⭐⭐⭐⭐ 4.9</div>
+                            </div>
+                            <button onclick="messageVolunteer('jessica')" class="message-btn">💬</button>
+                        </div>
+                        <div class="helper-info">
+                            <div class="helper-avatar">AT</div>
+                            <div class="helper-details">
+                                <strong>Ahmed T.</strong>
+                                <p>Science Helper • Freshman</p>
+                                <small>2 sessions this week</small>
+                                <div class="rating">⭐⭐⭐⭐⭐ 4.8</div>
+                            </div>
+                            <button onclick="messageVolunteer('ahmed')" class="message-btn">💬</button>
+                        </div>
+                    </div>
+                    <button onclick="findMoreVolunteers()" class="find-volunteers-btn">
+                        <i class="fas fa-search"></i> Find More Helpers
+                    </button>
+                </div>
+            </div>
+
+            <!-- Tutoring Sessions History -->
+            <div class="tutoring-sessions" style="margin-bottom: 2rem;">
+                <h4><i class="fas fa-chalkboard"></i> Recent Tutoring Sessions</h4>
+                <div class="sessions-grid">
+                    <div class="session-card">
+                        <div class="session-header">
+                            <span class="subject-tag math">Math</span>
+                            <span class="session-date">Today, 3:45 PM</span>
+                        </div>
+                        <div class="session-content">
+                            <h5>Quadratic Equations Practice</h5>
+                            <p>Worked through 8 problems with Jessica S. and AI assistance</p>
+                            <div class="volunteer-comment-preview">
+                                <div class="comment-header">
+                                    <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzY2N2VlYSIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiPjxwYXRoIGQ9Im0zIDIwIDEuNzMtMTAuNjFhMTEgMTEgMCAwIDEgMTEuODktOS4xMiAxMS4wNiAxMS4wNiAwIDAgMSA3LjM4IDcuMzggMTEgMTEgMCAwIDEtMTIuMTUgMTMuMTVMMyAyMVoiLz48L3N2Zz4=" alt="comment" class="comment-icon">
+                                    <span class="tutor-name">Jessica S.</span>
+                                </div>
+                                <p class="comment-text">"Maria grasped the concept quickly and showed great problem-solving intuition! 🌟"</p>
+                            </div>
+                            <div class="session-stats">
+                                <span><i class="fas fa-clock"></i> 25 minutes</span>
+                                <span><i class="fas fa-chart-line"></i> 92% accuracy</span>
+                                <span><i class="fas fa-smile"></i> Confident</span>
+                            </div>
+                        </div>
+                        <button onclick="viewSessionDetails('session1')" class="view-details-btn">View Details</button>
+                    </div>
+                    
+                    <div class="session-card">
+                        <div class="session-header">
+                            <span class="subject-tag science">Science</span>
+                            <span class="session-date">Yesterday, 4:20 PM</span>
+                        </div>
+                        <div class="session-content">
+                            <h5>Photosynthesis & Plant Biology</h5>
+                            <p>Interactive Q&A with Ahmed T. about cellular processes</p>
+                            <div class="volunteer-comment-preview">
+                                <div class="comment-header">
+                                    <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzIyYzU1ZSIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiPjxwYXRoIGQ9Im0zIDIwIDEuNzMtMTAuNjFhMTEgMTEgMCAwIDEgMTEuODktOS4xMiAxMS4wNiAxMS4wNiAwIDAgMSA3LjM4IDcuMzggMTEgMTEgMCAwIDEtMTIuMTUgMTMuMTVMMyAyMVoiLz48L3N2Zz4=" alt="comment" class="comment-icon">
+                                    <span class="tutor-name">Ahmed T.</span>
+                                </div>
+                                <p class="comment-text">"Asked excellent follow-up questions about chloroplasts! Very engaged. 🔬"</p>
+                            </div>
+                            <div class="session-stats">
+                                <span><i class="fas fa-clock"></i> 18 minutes</span>
+                                <span><i class="fas fa-chart-line"></i> 87% understanding</span>
+                                <span><i class="fas fa-lightbulb"></i> Curious</span>
+                            </div>
+                        </div>
+                        <button onclick="viewSessionDetails('session2')" class="view-details-btn">View Details</button>
+                    </div>
+                    
+                    <div class="session-card">
+                        <div class="session-header">
+                            <span class="subject-tag english">English</span>
+                            <span class="session-date">2 days ago, 2:15 PM</span>
+                        </div>
+                        <div class="session-content">
+                            <h5>Essay Writing & Grammar</h5>
+                            <p>Received feedback on persuasive essay structure</p>
+                            <div class="volunteer-comment-preview">
+                                <div class="comment-header">
+                                    <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI2Y1OWUwYiIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiPjxwYXRoIGQ9Im0zIDIwIDEuNzMtMTAuNjFhMTEgMTEgMCAwIDEgMTEuODktOS4xMiAxMS4wNiAxMS4wNiAwIDAgMSA3LjM4IDcuMzggMTEgMTEgMCAwIDEtMTIuMTUgMTMuMTVMMyAyMVoiLz48L3N2Zz4=" alt="comment" class="comment-icon">
+                                    <span class="tutor-name">Sarah M.</span>
+                                </div>
+                                <p class="comment-text">"Much stronger thesis statements and flow between paragraphs! 📝✨"</p>
+                            </div>
+                            <div class="session-stats">
+                                <span><i class="fas fa-clock"></i> 32 minutes</span>
+                                <span><i class="fas fa-chart-line"></i> Great improvement</span>
+                                <span><i class="fas fa-pencil-alt"></i> Creative</span>
+                            </div>
+                        </div>
+                        <button onclick="viewSessionDetails('session3')" class="view-details-btn">View Details</button>
+                    </div>
+                </div>
+                <button onclick="viewAllSessions()" class="view-all-sessions-btn">
+                    <i class="fas fa-history"></i> View All Sessions (23 total)
+                </button>
+            </div>
+
+            <!-- Volunteer Comments & Feedback -->
+            <div class="volunteer-comments-section" style="margin-bottom: 2rem;">
+                <h4><i class="fas fa-comment-dots"></i> Volunteer Feedback & Comments</h4>
+                <div class="comments-grid">
+                    <div class="comment-card detailed">
+                        <div class="comment-meta">
+                            <div class="tutor-avatar" style="background: linear-gradient(135deg, #667eea, #764ba2);">JS</div>
+                            <div class="tutor-info">
+                                <strong>Jessica S.</strong>
+                                <span>Math Tutor • Today 3:45 PM</span>
+                            </div>
+                            <div class="comment-rating">
+                                <span class="rating-label">Session Rating:</span>
+                                <div class="stars">⭐⭐⭐⭐⭐</div>
+                            </div>
+                        </div>
+                        <div class="comment-content">
+                            <h5>Quadratic Equations Practice</h5>
+                            <p class="comment-full">"Maria demonstrated exceptional understanding today! She not only solved all 8 quadratic problems correctly but also made the connection to real-world applications like projectile motion. Her questions about 'when would I use this in life?' show she's thinking beyond just memorizing formulas. I'm really impressed with her analytical thinking skills. She's definitely ready for more advanced topics! 🌟📈"</p>
+                            <div class="comment-tags">
+                                <span class="tag positive">✅ Strong Grasp</span>
+                                <span class="tag positive">✅ Critical Thinking</span>
+                                <span class="tag positive">✅ Ready to Advance</span>
+                            </div>
+                        </div>
+                        <div class="comment-actions">
+                            <button onclick="replyToComment('jessica', 'session1')" class="reply-btn">💬 Reply to Jessica</button>
+                            <button onclick="scheduleFollowUp('jessica')" class="schedule-btn">📅 Schedule Follow-up</button>
+                        </div>
+                    </div>
+
+                    <div class="comment-card detailed">
+                        <div class="comment-meta">
+                            <div class="tutor-avatar" style="background: linear-gradient(135deg, #22c55e, #16a34a);">AT</div>
+                            <div class="tutor-info">
+                                <strong>Ahmed T.</strong>
+                                <span>Science Tutor • Yesterday 4:20 PM</span>
+                            </div>
+                            <div class="comment-rating">
+                                <span class="rating-label">Session Rating:</span>
+                                <div class="stars">⭐⭐⭐⭐⭐</div>
+                            </div>
+                        </div>
+                        <div class="comment-content">
+                            <h5>Photosynthesis & Plant Biology</h5>
+                            <p class="comment-full">"What a curious mind! Maria asked some of the best questions I've heard about photosynthesis. She wanted to know why plants are green, how they 'breathe' at night, and even connected it to climate change discussions. Her engagement level was through the roof! 🔬 We spent extra time exploring chloroplasts under a virtual microscope, and she was fascinated. I recommended some additional resources for her to explore."</p>
+                            <div class="comment-tags">
+                                <span class="tag positive">✅ Highly Engaged</span>
+                                <span class="tag positive">✅ Great Questions</span>
+                                <span class="tag note">📝 Extra Resources Provided</span>
+                            </div>
+                        </div>
+                        <div class="comment-actions">
+                            <button onclick="replyToComment('ahmed', 'session2')" class="reply-btn">💬 Reply to Ahmed</button>
+                            <button onclick="viewExtraResources('ahmed')" class="resources-btn">📚 View Resources</button>
+                        </div>
+                    </div>
+
+                    <div class="comment-card detailed">
+                        <div class="comment-meta">
+                            <div class="tutor-avatar" style="background: linear-gradient(135deg, #f59e0b, #d97706);">SM</div>
+                            <div class="tutor-info">
+                                <strong>Sarah M.</strong>
+                                <span>English Tutor • 2 days ago 2:15 PM</span>
+                            </div>
+                            <div class="comment-rating">
+                                <span class="rating-label">Session Rating:</span>
+                                <div class="stars">⭐⭐⭐⭐⭐</div>
+                            </div>
+                        </div>
+                        <div class="comment-content">
+                            <h5>Essay Writing & Grammar</h5>
+                            <p class="comment-full">"Significant improvement in Maria's persuasive writing! Her thesis statements are now much clearer and she's using transition words effectively. We worked on paragraph structure and I can see she's applying the feedback from our previous session. Her essay about environmental protection was both passionate and well-organized. She has a natural voice that's emerging in her writing. ✍️✨"</p>
+                            <div class="comment-tags">
+                                <span class="tag positive">✅ Clear Improvement</span>
+                                <span class="tag positive">✅ Strong Voice</span>
+                                <span class="tag suggest">💡 Continue Practice</span>
+                            </div>
+                        </div>
+                        <div class="comment-actions">
+                            <button onclick="replyToComment('sarah', 'session3')" class="reply-btn">💬 Reply to Sarah</button>
+                            <button onclick="viewEssayProgress('sarah')" class="progress-btn">📊 View Writing Progress</button>
+                        </div>
+                    </div>
+                </div>
+                <button onclick="viewAllComments()" class="view-all-comments-btn">
+                    <i class="fas fa-comment-medical"></i> View All Comments & Feedback (15 total)
+                </button>
+            </div>
+
+            <!-- Parent-Child Communication -->
+            <div class="parent-child-communication" style="margin-bottom: 2rem;">
+                <h4><i class="fas fa-comments"></i> Family Learning Chat</h4>
+                <div class="communication-preview">
+                    <div class="message parent-message">
+                        <strong>You:</strong> How did your math test go today? 😊
+                        <small>Today, 4:00 PM</small>
+                    </div>
+                    <div class="message child-message">
+                        <strong>Maria:</strong> Really good! Jessica helped me understand quadratics better. Got a 94%! 🎉
+                        <small>Today, 4:02 PM</small>
+                    </div>
+                    <div class="message ai-message">
+                        <strong>LearnBridge AI:</strong> Maria showed excellent progress in algebraic thinking during today's session. She's ready for more advanced topics! 📈
+                        <small>Today, 4:05 PM</small>
+                    </div>
+                </div>
+                <button onclick="openFamilyChat()" class="open-chat-btn">
+                    <i class="fas fa-comment-dots"></i> Open Family Chat
+                </button>
+            </div>
+
+            <!-- Real-time Notifications -->
+            <div class="notifications-card" style="background: linear-gradient(135deg, #667eea, #764ba2); color: white; border-radius: 15px; padding: 1.5rem; margin-bottom: 2rem;">
+                <h4><i class="fas fa-bell"></i> Live Updates</h4>
+                <div id="live-notifications">
+                    <div class="notification-item">
+                        <span class="notification-time">2 min ago</span>
+                        <span class="notification-text">✨ Maria just completed her algebra homework with AI help!</span>
+                    </div>
+                    <div class="notification-item">
+                        <span class="notification-time">5 min ago</span>
+                        <span class="notification-text">🤝 Two local volunteers added encouraging comments</span>
+                    </div>
+                    <div class="notification-item">
+                        <span class="notification-time">12 min ago</span>
+                        <span class="notification-text">📚 Started working on science project about ecosystems</span>
+                    </div>
+                </div>
+                <button onclick="viewAllActivity()" style="background: rgba(255,255,255,0.2); color: white; border: none; padding: 8px 16px; border-radius: 15px; cursor: pointer; margin-top: 1rem;">View All Activity</button>
+            </div>
+
+            <!-- Language Selector for Parent Updates -->
+            <div class="language-settings">
+                <h4><i class="fas fa-globe"></i> Receive Updates In:</h4>
+                <select id="parent-language" onchange="changeParentLanguage()">
+                    <option value="en">English - Receive updates in English</option>
+                    <option value="es">Español - Recibir actualizaciones en español</option>
+                    <option value="zh">中文 - 以中文接收更新</option>
+                    <option value="ar">العربية - تلقي التحديثات باللغة العربية</option>
+                    <option value="hi">हिन्दी - हिंदी में अपडेट प्राप्त करें</option>
+                    <option value="fr">Français - Recevoir les mises à jour en français</option>
+                </select>
+                <div id="language-demo" style="margin-top: 1rem; padding: 1rem; background: rgba(102, 126, 234, 0.1); border-radius: 8px; display: none;">
+                    <strong>Sample Update:</strong>
+                    <p id="sample-update">Your child completed 3 homework problems today with 92% accuracy!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Layer 4: Teacher Analytics Dashboard -->
+    <section id="teacher-layer" class="layer">
+        <div class="teacher-dashboard">
+            <div class="dashboard-header">
+                <h2><i class="fas fa-chalkboard-teacher"></i> Teacher Analytics Dashboard</h2>
+                <p>Comprehensive insights to optimize student learning outcomes and track progress</p>
+            </div>
+            
+            <!-- Classroom Analytics Overview -->
+            <div class="dashboard-section">
+                <h3><i class="fas fa-chart-pie"></i> Classroom Analytics</h3>
+                <div id="classroom-analytics"></div>
+            </div>
+            
+            <!-- Student Struggling Areas -->
+            <div class="dashboard-section">
+                <h3><i class="fas fa-exclamation-triangle"></i> Areas Requiring Immediate Attention</h3>
+                <div id="struggling-areas"></div>
+            </div>
+            
+            <!-- Volunteer Activity Management -->
+            <div class="dashboard-section">
+                <h3><i class="fas fa-hands-helping"></i> Volunteer Activity Overview</h3>
+                <div id="volunteer-activity"></div>
+            </div>
+            
+            <!-- AI-Powered Curriculum Recommendations -->
+            <div class="dashboard-section">
+                <h3><i class="fas fa-robot"></i> AI-Powered Curriculum Recommendations</h3>
+                <div id="curriculum-recommendations"></div>
+            </div>
+            
+            <!-- Individual Student Progress Tracking -->
+            <div class="dashboard-section">
+                <h3><i class="fas fa-user-graduate"></i> Individual Student Progress</h3>
+                <div id="student-progress"></div>
+            </div>
+            
+            <!-- Quick Actions Panel -->
+            <div class="dashboard-section">
+                <h3><i class="fas fa-lightning-bolt"></i> Quick Actions</h3>
+                <div class="quick-actions-grid">
+                    <button onclick="generateClassReport()" class="action-btn primary">
+                        <i class="fas fa-file-alt"></i>
+                        <div>
+                            <h4>Generate Class Report</h4>
+                            <p>Comprehensive progress analysis</p>
+                        </div>
+                    </button>
+                    
+                    <button onclick="scheduleIntervention()" class="action-btn secondary">
+                        <i class="fas fa-calendar-plus"></i>
+                        <div>
+                            <h4>Schedule Intervention</h4>
+                            <p>Plan targeted support sessions</p>
+                        </div>
+                    </button>
+                    
+                    <button onclick="contactParents()" class="action-btn info">
+                        <i class="fas fa-phone"></i>
+                        <div>
+                            <h4>Parent Communication</h4>
+                            <p>Send progress updates</p>
+                        </div>
+                    </button>
+                    
+                    <button onclick="requestVolunteers()" class="action-btn warning">
+                        <i class="fas fa-user-plus"></i>
+                        <div>
+                            <h4>Request More Volunteers</h4>
+                            <p>For high-demand subjects</p>
+                        </div>
+                    </button>
+                    
+                    <button onclick="exportData()" class="action-btn success">
+                        <i class="fas fa-download"></i>
+                        <div>
+                            <h4>Export Analytics</h4>
+                            <p>Download detailed reports</p>
+                        </div>
+                    </button>
+                    
+                    <button onclick="aiInsights()" class="action-btn special">
+                        <i class="fas fa-brain"></i>
+                        <div>
+                            <h4>AI Teaching Insights</h4>
+                            <p>Personalized recommendations</p>
+                        </div>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Teacher Volunteer Matching Section -->
+            <div class="dashboard-section">
+                <h3><i class="fas fa-users-cog"></i> Student-Volunteer Matching Center</h3>
+                <p>Help your students find the perfect volunteer tutors based on their individual needs</p>
+                
+                <div class="teacher-volunteer-tools">
+                    <div class="matching-tool-card">
+                        <h4><i class="fas fa-search"></i> Find Tutors for Specific Students</h4>
+                        <p>Select students who need extra help and find matching volunteer tutors</p>
+                        
+                        <div class="student-selector">
+                            <label>Select students needing help:</label>
+                            <div class="student-checkboxes">
+                                <label class="student-checkbox">
+                                    <input type="checkbox" value="maria-gonzalez">
+                                    <span>Maria Gonzalez - Struggling with Algebra</span>
+                                </label>
+                                <label class="student-checkbox">
+                                    <input type="checkbox" value="james-kim">
+                                    <span>James Kim - Needs English Writing Help</span>
+                                </label>
+                                <label class="student-checkbox">
+                                    <input type="checkbox" value="sarah-johnson">
+                                    <span>Sarah Johnson - Chemistry Lab Reports</span>
+                                </label>
+                                <label class="student-checkbox">
+                                    <input type="checkbox" value="alex-patel">
+                                    <span>Alex Patel - Math Word Problems</span>
+                                </label>
+                            </div>
+                        </div>
+                        
+                        <button onclick="findTutorsForStudents()" class="teacher-action-btn">
+                            <i class="fas fa-magic"></i> Find Perfect Matches
+                        </button>
+                    </div>
+                    
+                    <div class="matching-tool-card">
+                        <h4><i class="fas fa-clipboard-list"></i> Bulk Student Assessment</h4>
+                        <p>Assess multiple students at once to identify tutoring needs</p>
+                        
+                        <div class="bulk-assessment">
+                            <label>Subject Area:</label>
+                            <select id="bulk-subject">
+                                <option value="math">Mathematics</option>
+                                <option value="science">Science</option>
+                                <option value="english">English</option>
+                                <option value="history">History</option>
+                            </select>
+                            
+                            <label>Difficulty Level:</label>
+                            <select id="difficulty-level">
+                                <option value="struggling">Students Struggling (Below Grade Level)</option>
+                                <option value="average">Average Students (At Grade Level)</option>
+                                <option value="advanced">Advanced Students (Above Grade Level)</option>
+                            </select>
+                        </div>
+                        
+                        <button onclick="runBulkAssessment()" class="teacher-action-btn">
+                            <i class="fas fa-chart-line"></i> Assess & Match
+                        </button>
+                    </div>
+                    
+                    <div class="matching-tool-card">
+                        <h4><i class="fas fa-calendar-check"></i> Schedule Group Sessions</h4>
+                        <p>Organize group tutoring sessions with volunteers for similar learning needs</p>
+                        
+                        <div class="group-session-planner">
+                            <label>Session Type:</label>
+                            <select id="session-type">
+                                <option value="homework-help">Homework Help Sessions</option>
+                                <option value="test-prep">Test Preparation</option>
+                                <option value="concept-review">Concept Review</option>
+                                <option value="project-support">Project Support</option>
+                            </select>
+                            
+                            <label>Preferred Time:</label>
+                            <select id="group-time">
+                                <option value="after-school">After School (3-5 PM)</option>
+                                <option value="evening">Evening (6-8 PM)</option>
+                                <option value="weekend">Weekend Sessions</option>
+                            </select>
+                        </div>
+                        
+                        <button onclick="scheduleGroupSession()" class="teacher-action-btn">
+                            <i class="fas fa-users"></i> Create Group Session
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Teacher Volunteer Results -->
+                <div class="teacher-volunteer-results" id="teacher-volunteer-results" style="display: none;">
+                    <h4><i class="fas fa-star"></i> Recommended Volunteer Matches</h4>
+                    <div id="teacher-volunteer-matches"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Loading Overlay -->
+    <div class="loading-overlay" id="loading-overlay">
+        <div class="loading-spinner">
+            <i class="fas fa-brain fa-spin"></i>
+            <p>AI is analyzing your homework...</p>
+        </div>
+    </div>
+
+    <!-- Success Modal -->
+    <div class="modal" id="success-modal">
+        <div class="modal-content">
+            <h3><i class="fas fa-check-circle"></i> Great Job!</h3>
+            <p>Your homework has been solved and a volunteer is adding encouragement!</p>
+            <button onclick="closeModal()">Continue Learning</button>
+        </div>
+    </div>
+
+    <script src="env-config.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>

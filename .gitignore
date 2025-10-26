@@ -1,0 +1,139 @@
+# LearnBridge AI - Git Ignore File
+
+# Environment Variables
+.env
+.env.local
+.env.development
+.env.production
+
+# API Keys and Secrets
+*.key
+*.pem
+*.p12
+config/secrets.json
+config/keys.json
+
+# Node.js Dependencies
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+package-lock.json
+yarn.lock
+
+# Python Dependencies
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Virtual Environments
+venv/
+env/
+ENV/
+.venv/
+
+# IDE and Editor Files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Runtime Data
+pids/
+*.pid
+*.seed
+*.pid.lock
+
+# Coverage Directory
+coverage/
+.nyc_output/
+
+# Dependency Directories
+jspm_packages/
+
+# Optional npm cache directory
+.npm
+
+# Optional eslint cache
+.eslintcache
+
+# Output of 'npm pack'
+*.tgz
+
+# Yarn Integrity file
+.yarn-integrity
+
+# dotenv environment variables file
+.env.test
+
+# Temporary Files
+tmp/
+temp/
+*.tmp
+*.temp
+
+# OS Generated Files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Application Specific
+uploads/
+user_data/
+session_data/
+cache/
+.cache/
+
+# Documentation Build
+docs/_build/
+
+# Backup Files
+*.backup
+*.bak
+*.old
+
+# Database Files
+*.db
+*.sqlite
+*.sqlite3
+
+# Compressed Files
+*.zip
+*.tar.gz
+*.rar
+
+# Personal Notes
+TODO.md
+NOTES.md
+personal/
