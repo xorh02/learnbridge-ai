@@ -22,7 +22,7 @@ LearnBridge AI is a revolutionary 4-layer educational platform that connects stu
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/your-username/learnbridge-ai.git
+   git clone https://github.com/xorh02/learnbridge-ai.git
    cd learnbridge-ai
    ```
 
@@ -398,10 +398,10 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 📞 Contact & Support
 
-- **Demo**: [https://learnbridge-ai.netlify.app](https://learnbridge-ai.netlify.app)
-- **Documentation**: [Wiki](https://github.com/your-username/learnbridge-ai/wiki)
-- **Issues**: [GitHub Issues](https://github.com/your-username/learnbridge-ai/issues)
-- **Discussions**: [GitHub Discussions](https://github.com/your-username/learnbridge-ai/discussions)
+- **Demo**: [https://xorh02.github.io/learnbridge-ai](https://xorh02.github.io/learnbridge-ai)
+- **Documentation**: [Wiki](https://github.com/xorh02/learnbridge-ai/wiki)
+- **Issues**: [GitHub Issues](https://github.com/xorh02/learnbridge-ai/issues)
+- **Discussions**: [GitHub Discussions](https://github.com/xorh02/learnbridge-ai/discussions)
 
 ---
 

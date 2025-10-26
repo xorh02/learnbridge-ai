@@ -5,7 +5,7 @@ Thank you for your interest in contributing to LearnBridge AI! We're excited to 
 ## 🌟 How to Contribute
 
 ### 1. **Report Bugs**
-- Check if the issue already exists in [GitHub Issues](https://github.com/your-username/learnbridge-ai/issues)
+- Check if the issue already exists in [GitHub Issues](https://github.com/xorh02/learnbridge-ai/issues)
 - Create a detailed bug report with steps to reproduce
 - Include browser/device information and screenshots if applicable
 
@@ -25,7 +25,7 @@ Thank you for your interest in contributing to LearnBridge AI! We're excited to 
 
 1. **Clone your fork**
    ```bash
-   git clone https://github.com/your-username/learnbridge-ai.git
+   git clone https://github.com/xorh02/learnbridge-ai.git
    cd learnbridge-ai
    ```
 
@@ -118,8 +118,8 @@ Contributors will be recognized in:
 
 ## 📞 Questions?
 
-- **General questions**: Open a [Discussion](https://github.com/your-username/learnbridge-ai/discussions)
-- **Bug reports**: Create an [Issue](https://github.com/your-username/learnbridge-ai/issues)
+- **General questions**: Open a [Discussion](https://github.com/xorh02/learnbridge-ai/discussions)
+- **Bug reports**: Create an [Issue](https://github.com/xorh02/learnbridge-ai/issues)
 - **Security concerns**: Email us privately at security@learnbridge-ai.com
 
 ## 🌟 Code of Conduct
