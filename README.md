@@ -378,21 +378,10 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ---
 
-## 🏆 Awards & Recognition
-
-- 🥇 **Youth Coders Hack 2025 Winner** - Best Social Impact Solution
-- 🌟 **OpenAI Community Choice Award** - Most Creative Use of GPT-4
-- 🎓 **EdTech Innovation Prize** - Future of Learning
-- 🌍 **Global Good Award** - Educational Equity Champion
-
----
 
 ## 👥 Team
 
-- **Lead Developer**: Xavier Rodriguez
-- **AI Specialist**: GitHub Copilot
-- **UX Designer**: Community-driven design
-- **Beta Testers**: 500+ students worldwide
+- **Lead Developer**: Xavier Ong Rui Hao
 
 ---
 
