@@ -316,11 +316,7 @@ LearnBridge AI directly addresses **educational inequality** - one of society's 
 - ✅ **User Experience**: Intuitive 4-layer design for all stakeholders
 - ✅ **Technical Excellence**: Production-ready with security best practices
 
-### **Demo Story**
-*"Maria, a 7th grader in rural Mexico, struggles with algebra homework. She takes a photo of the problem, speaks her question in Spanish, and instantly receives step-by-step help from AI. Meanwhile, Carlos, a high school volunteer in the city, sees her progress and offers additional encouragement. Maria's parents track her improvement in real-time, while her teacher gains insights into class-wide learning patterns. All barriers removed. All learners connected."*
-
 ---
-
 ## 🚀 Deployment Options
 
 ### **Development**
@@ -397,10 +393,8 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ## 🎉 Acknowledgments
 
 Special thanks to:
-- **OpenAI** for providing world-class AI APIs
 - **Youth Coders Hack** for the platform to showcase social impact
-- **Beta testing community** for invaluable feedback
-- **Open source contributors** who make projects like this possible
+
 
 ---
 
